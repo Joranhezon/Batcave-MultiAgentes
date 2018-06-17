@@ -10,6 +10,7 @@ public class BatmobileAgent extends Agent {
 	private String pilot = null; 
 	private DriveBehaviour driveBehaviour;
 	private RendezvousBehaviour rendezvousBehaviour;
+	private ReceiveBatmanRequestBehaviour receiveBatmanRequestBehaviour;
 
 
 	public String getPilot() {
@@ -23,8 +24,9 @@ public class BatmobileAgent extends Agent {
 	protected void setup() {
 		this.pilot = Constants.CHANGE_PILOT_TO_BATMAN;
 		
-		driveBehaviour = new DriveBehaviour(this);
-		rendezvousBehaviour = new RendezvousBehaviour(this);
+		this.driveBehaviour = new DriveBehaviour(this);
+		this.rendezvousBehaviour = new RendezvousBehaviour(this);
+		this.receiveBatmanRequestBehaviour = new ReceiveBatmanRequestBehaviour(this);
 		
 		insertInYellowPages();
 		
@@ -48,5 +50,9 @@ public class BatmobileAgent extends Agent {
 	
 	public void removeDriveBehaviour() {
 		this.removeBehaviour(driveBehaviour);
+	}
+	
+	public void callRendezvousBehaviour() {
+		this.rendezvousBehaviour.action();
 	}
 }

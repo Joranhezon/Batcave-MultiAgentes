@@ -17,15 +17,7 @@ public class RendezvousBehaviour extends CyclicBehaviour {
 	}
 	
 	private void rendezvous() {
-		if(checkRequest()) {
-			System.out.println("Sending Batmobile to Batman Location");
-		}
-		else {
-			System.out.println("Request denied!");
-		}
+		System.out.println("Sending Batmobile to Batman Location");
 	}
 	
-	private boolean checkRequest() {
-		if()
-	}
 }
