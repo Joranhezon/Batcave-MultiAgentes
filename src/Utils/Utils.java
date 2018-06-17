@@ -68,4 +68,23 @@ public class Utils {
 		
 		return batmobileAID;
 	}
+	
+	/* Used to search and return the Batcomputer agent */
+	public static AID getBatcomputerAID(Agent agent) {
+		AID batcomputerAID = null;
+		
+		try {
+			batcomputerAID = 
+					Utils.searchForAgent(
+							agent,
+							Constants.BATCOMPUTER_AGENT_NAME,
+							Constants.BATCOMPUTER_AGENT_TYPE);
+			
+		} catch (FIPAException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return batcomputerAID;
+	}
 }
