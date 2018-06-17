@@ -9,11 +9,16 @@ public class BatmanAgent extends Agent{
 	
 	private final static String requestID = Constants.BATMAN_REQUEST;
 	private RequestBatmobileBehaviour requestBatmobileBehaviour;
+	private RequestVillainInfoBehaviour requestVillainInfoBehaviour;
 	
 	protected void setup() {
 		requestBatmobileBehaviour = new RequestBatmobileBehaviour(this);
+		requestVillainInfoBehaviour = new RequestVillainInfoBehaviour(this);
 		
 		insertInYellowPages();
+		
+		addBehaviour(requestBatmobileBehaviour);
+		addBehaviour(requestVillainInfoBehaviour);
 	}
 	
 	/* Used to make sure the agent is visible and can be accessed by other agents */

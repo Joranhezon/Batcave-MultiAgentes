@@ -15,7 +15,7 @@ public final class Constants {
 	public final static String BATCOMPUTER_AGENT_NAME = "Batcomputer";
 	public final static String BATCOMPUTER_AGENT_TYPE = "Definetly not Windows";
 	
-	/* Communicaton link between agents */
+	/* Communication link between agents */
 	public final static String BATMAN_TO_BATMOBILE = "batman_to_batmobile";
 	public final static String BATMAN_TO_BATCOMPUTER = "batman_to_batcomputer";
 	
