@@ -19,8 +19,7 @@ public class BatmobileAgent extends Agent {
 		this.pilot = pilot;
 	}
 	
-	/* Serves as the initializer of the class */
-	protected void ignition() {
+	protected void setup() {
 		this.pilot = Constants.CHANGE_PILOT_TO_BATMAN;
 		
 		driveBehaviour = new DriveBehaviour(this);
@@ -38,5 +37,13 @@ public class BatmobileAgent extends Agent {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void addDriveBehaviour() {
+		this.addBehaviour(driveBehaviour);
+	}
+	
+	public void removeDriveBehaviour() {
+		this.removeBehaviour(driveBehaviour);
 	}
 }
