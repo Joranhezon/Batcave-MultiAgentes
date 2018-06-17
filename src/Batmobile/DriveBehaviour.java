@@ -16,7 +16,8 @@ public class DriveBehaviour extends CyclicBehaviour {
 	}
 	
 	private void drive() {
-		System.out.println("Na na na na na na na na. Batmobile currently being driven by " + this.batmobileAgent.getPilot());
+		System.out.println("Na na na na na na na na. Batmobile currently being driven by "
+				+ this.batmobileAgent.getPilot());
 		this.batmobileAgent.removeDriveBehaviour();
 	}
 }

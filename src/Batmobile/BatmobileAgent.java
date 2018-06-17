@@ -9,6 +9,7 @@ public class BatmobileAgent extends Agent {
 	
 	private String pilot = null; 
 	private DriveBehaviour driveBehaviour;
+	private RendezvousBehaviour rendezvousBehaviour;
 
 
 	public String getPilot() {
@@ -23,12 +24,14 @@ public class BatmobileAgent extends Agent {
 		this.pilot = Constants.CHANGE_PILOT_TO_BATMAN;
 		
 		driveBehaviour = new DriveBehaviour(this);
+		rendezvousBehaviour = new RendezvousBehaviour(this);
 		
 		insertInYellowPages();
 		
 		addBehaviour(driveBehaviour);
 	}
 	
+	/* Used to make sure the agent is visible and can be accessed by other agents */
 	private void insertInYellowPages() {
 		try {
 			Utils.insertAgentInYellowPages(this, getAID(), Constants.BATMOBILE_AGENT_NAME,
