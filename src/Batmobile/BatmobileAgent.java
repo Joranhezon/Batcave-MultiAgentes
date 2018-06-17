@@ -31,6 +31,7 @@ public class BatmobileAgent extends Agent {
 		insertInYellowPages();
 		
 		addBehaviour(driveBehaviour);
+		addBehaviour(receiveBatmanRequestBehaviour);
 	}
 	
 	/* Used to make sure the agent is visible and can be accessed by other agents */

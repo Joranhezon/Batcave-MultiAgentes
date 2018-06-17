@@ -28,6 +28,7 @@ public class ReceiveBatmanRequestBehaviour extends CyclicBehaviour{
 	
 	/* Search for a request from the Batman agent */
 	private String searchForBatmanRequest() {
+		System.out.print("entrei aqui");
 		MessageTemplate messageTemplate = 
 				MessageTemplate.MatchConversationId(Constants.BATMAN_TO_BATMOBILE);
 		ACLMessage aclMessage = this.batmobileAgent.receive(messageTemplate);
@@ -37,7 +38,7 @@ public class ReceiveBatmanRequestBehaviour extends CyclicBehaviour{
 			message = aclMessage.getContent();
 		}
 		else {
-			System.out.println("Request is empty");
+			block();
 		}
 
 		return message;
