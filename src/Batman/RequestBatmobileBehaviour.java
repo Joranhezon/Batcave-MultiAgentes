@@ -24,11 +24,10 @@ public class RequestBatmobileBehaviour extends CyclicBehaviour{
 
 		if(batmobileAID != null) {
 			ACLMessage aclMessage = new ACLMessage(ACLMessage.INFORM);
-			
-			
 			aclMessage.setConversationId(Constants.BATMAN_TO_BATMOBILE);
 			aclMessage.addReceiver(batmobileAID);
 			aclMessage.setContent(Constants.BATMAN_BATMOBILE_RENDEZVOUS_REQUEST);
+			System.out.println(aclMessage);
 			this.batmanAgent.send(aclMessage);
 		}
 	}

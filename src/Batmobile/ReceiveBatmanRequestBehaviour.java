@@ -16,32 +16,27 @@ public class ReceiveBatmanRequestBehaviour extends CyclicBehaviour{
 	@Override
 	public void action() {
 		String message = searchForBatmanRequest();
-		boolean isRendezvousRequest = checkIfItsRendezvousRequest(message);
-				
-		if(message != null && isRendezvousRequest != false) {
+		
+		if(message != null) {
 			this.batmobileAgent.callRendezvousBehaviour();
 		}
-		else {
-			System.out.println("Could not send Batmobile to Batman's location");
-		}
+		
 	}
 	
 	/* Search for a request from the Batman agent */
 	private String searchForBatmanRequest() {
-		System.out.print("entrei aqui");
-		MessageTemplate messageTemplate = 
-				MessageTemplate.MatchConversationId(Constants.BATMAN_TO_BATMOBILE);
-		ACLMessage aclMessage = this.batmobileAgent.receive(messageTemplate);
+		ACLMessage aclMessage = this.batmobileAgent.receive();
 
 		String message = null;
 		if(aclMessage != null) {
 			message = aclMessage.getContent();
+			return message;
 		}
 		else {
 			block();
+			return null;
 		}
-
-		return message;
+		
 	}
 	
 	private boolean checkIfItsRendezvousRequest(String message) {
