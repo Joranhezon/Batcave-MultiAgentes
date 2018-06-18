@@ -16,7 +16,7 @@ public class ReceiveBatmanRequestBehaviour extends CyclicBehaviour{
 		String message = searchForBatmanRequest();
 		
 		if(message != null) {
-			
+			this.batcomputerAgent.callSendVillaInfoBehaviour();
 		}
 	}
 	
