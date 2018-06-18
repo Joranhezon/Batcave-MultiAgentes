@@ -16,9 +16,6 @@ public class BatmanAgent extends Agent{
 		requestVillainInfoBehaviour = new RequestVillainInfoBehaviour(this);
 		
 		insertInYellowPages();
-		
-		addBehaviour(requestBatmobileBehaviour);
-		addBehaviour(requestVillainInfoBehaviour);
 	}
 	
 	/* Used to make sure the agent is visible and can be accessed by other agents */

@@ -28,7 +28,7 @@ public class RequestVillainInfoBehaviour extends CyclicBehaviour {
 			aclMessage.setConversationId(Constants.BATMAN_TO_BATCOMPUTER);
 			aclMessage.addReceiver(batcomputerAID);
 			aclMessage.setContent(Constants.BATCOMPUTER_VILLAIN_INFO_REQUEST);
-			System.out.println(aclMessage);
+
 			this.batmanAgent.send(aclMessage);
 		}
 	}
