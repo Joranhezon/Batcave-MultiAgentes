@@ -22,4 +22,5 @@ public final class Constants {
 	/* Messages exchanged between agents */
 	public final static String BATMAN_BATMOBILE_RENDEZVOUS_REQUEST = "Requesting Batmobile support at my location.";
 	public final static String BATCOMPUTER_VILLAIN_INFO_REQUEST = "Requesting Killer Croc Information.";
+	public final static String BATMAN_BATMOBILE_SELFDESTRUCTION_REQUEST = "Requesting Batmobile selfdestruction.";
 }
