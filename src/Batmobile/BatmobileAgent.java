@@ -11,7 +11,8 @@ public class BatmobileAgent extends Agent {
 	private DriveBehaviour driveBehaviour;
 	private RendezvousBehaviour rendezvousBehaviour;
 	private ReceiveBatmanRequestBehaviour receiveBatmanRequestBehaviour;
-
+	private ReceiveSelfDestructionRequestBehaviour receiveSelfDestructionRequestBehaviour;
+	private SelfDestructionBehaviour selfDestructionBehaviour;
 
 	public String getPilot() {
 		return pilot;
@@ -26,7 +27,9 @@ public class BatmobileAgent extends Agent {
 		
 		this.driveBehaviour = new DriveBehaviour(this);
 		this.rendezvousBehaviour = new RendezvousBehaviour(this);
+		this.selfDestructionBehaviour = new SelfDestructionBehaviour(this);
 		this.receiveBatmanRequestBehaviour = new ReceiveBatmanRequestBehaviour(this);
+		this.receiveSelfDestructionRequestBehaviour = new ReceiveSelfDestructionRequestBehaviour(this);
 		
 		insertInYellowPages();
 		
@@ -55,5 +58,9 @@ public class BatmobileAgent extends Agent {
 	
 	public void callRendezvousBehaviour() {
 		this.rendezvousBehaviour.action();
+	}
+	
+	public void callSelfDestructionBehaviour() {
+		this.selfDestructionBehaviour.action();
 	}
 }
